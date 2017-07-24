@@ -12,7 +12,7 @@ BlogPosts.create("5 Best Crypto Currencies", "Fake Blog Content Here", "Ross Con
 BlogPosts.create("Will Ripple Hit $1", "Fake Blog Content Here", "Jason Myerski");
 
 router.get('/', (req, res) => {
-	res.json(BlogPosts.get());
+  res.json(BlogPosts.get());
 });
 
 router.post('/', jsonParser, (req, res) => {
@@ -44,7 +44,7 @@ router.put('/:id', jsonParser, (req, res) => {
 
   if (req.params.id !== req.body.id) {
     console.log('here');
-    const message = `Request path id (${req.params.id}) and request body id (${req.body.id}) must match`;
+    const message = (`Request path id (${req.params.id}) and request body id (${req.body.id}) must match`);
     console.error(message);
     return res.status(400).send(message);
   }
@@ -64,6 +64,6 @@ router.delete('/:id', (req, res) => {
 	BlogPosts.delete(req.params.id);
 	console.log(`Deleted Blog post list item \`${req.params.ID}\``);
 	res.status(204).end();
-})
+});
 
 module.exports = router;
