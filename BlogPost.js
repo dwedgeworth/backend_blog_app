@@ -13,7 +13,6 @@ BlogPosts.create("Will Ripple Hit $1", "Fake Blog Content Here", "Jason Myerski"
 
 router.get('/', (req, res) => {
 	res.json(BlogPosts.get());
-	console.log(`Deleted blog post \`${req.params.ID}\``);
 })
 
 router.post('/', jsonParser, (req, res) => {
@@ -33,7 +32,7 @@ router.post('/', jsonParser, (req, res) => {
 });
 
 router.put('/:id', jsonParser, (req, res) => {
-  const requiredFields = ['title', 'content', 'author', 'publishDate', 'id'];
+  const requiredFields = ['title', 'content', 'author', 'id'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {

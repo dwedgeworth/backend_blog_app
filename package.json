@@ -4,11 +4,19 @@
   "description": "BlogApp",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "author": "Derek Wedgeworth",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.4.2"
   }
 }
