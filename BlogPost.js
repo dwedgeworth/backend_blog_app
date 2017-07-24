@@ -13,7 +13,7 @@ BlogPosts.create("Will Ripple Hit $1", "Fake Blog Content Here", "Jason Myerski"
 
 router.get('/', (req, res) => {
 	res.json(BlogPosts.get());
-})
+});
 
 router.post('/', jsonParser, (req, res) => {
   // ensure `name` and `budget` are in request body
